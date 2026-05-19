@@ -44,7 +44,7 @@ export default function NewProductPage() {
 
     return (
         <div className="max-w-xl">
-            <h1 className="text-md tracking-widest uppercase font-semibold mb-8">
+            <h1 className="text-lg lg:text-2xl tracking-widest uppercase font-semibold mb-8">
                 Add Product
             </h1>
             {error && <p className="text-xs text-red-500 mb-4">{error}</p>}
@@ -93,7 +93,7 @@ export default function NewProductPage() {
                     onChange={(e) =>
                         setForm({ ...form, collection: e.target.value })
                     }
-                    className="border border-white px-4 py-3 text-sm outline-none"
+                    className="border border-white bg-black px-4 py-3 text-sm outline-none"
                 >
                     <option value="">Select Collection</option>
                     <option value="staple">Staple</option>
@@ -106,7 +106,7 @@ export default function NewProductPage() {
                 <button
                     onClick={handleSubmit}
                     disabled={loading}
-                    className="btn-press bg-black text-white py-3 text-xs tracking-widest uppercase hover:bg-gray-800 transition-colors disabled:opacity-50"
+                    className="btn-press bg-black text-white py-3 border text-xs tracking-widest uppercase hover:bg-gray-800 transition-colors disabled:opacity-50"
                 >
                     {loading ? "Saving..." : "Save Product"}
                 </button>

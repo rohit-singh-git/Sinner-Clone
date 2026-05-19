@@ -8,17 +8,18 @@ export default async function AdminOrdersPage() {
 
     const serialized = orders.map((o: any) => ({
         id: o._id.toString(),
-        customer: o.customer.name ?? "Guest",
-        email: o.customer.email,
+        customer: o.customer?.name ?? "Guest",
+        email: o.customer?.email ?? "",
         total: o.total,
         status: o.status,
         date: new Date(o.createdAt).toISOString().split("T")[0],
-        items: o.items,
+        items: o.items ?? [],
+        shippingAddress: o.shippingAddress ?? null, // ← add this
     }));
 
     return (
         <div>
-            <h1 className="text-md tracking-widest uppercase font-semibold mb-8">
+            <h1 className="text-lg lg:text-2xl tracking-widest uppercase font-semibold mb-8">
                 Orders
             </h1>
             <AdminOrderTable orders={serialized} />

@@ -13,9 +13,9 @@ export default function AdminSidebar() {
     const path = usePathname();
 
     return (
-        <aside className="w-56 min-h-screen bg-black text-white flex flex-col">
+        <aside className="md:w-56 min-h-screen bg-black text-white flex flex-col">
             <div className="p-6 border-b border-white/10">
-                <p className="text-xs tracking-widest uppercase font-semibold">
+                <p className="text-lg lg:text-xl tracking-widest uppercase font-semibold">
                     Sinner Admin
                 </p>
             </div>
