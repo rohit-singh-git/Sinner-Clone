@@ -1,4 +1,5 @@
 import { CartItem } from "@/store/CartStore";
+import Image from "next/image";
 
 export default function OrderSummary({
     items,
@@ -17,7 +18,7 @@ export default function OrderSummary({
                 {items.map((item) => (
                     <div key={`${item.id}-${item.size}`} className="flex gap-4">
                         <div className="relative w-16 h-16 bg-gray-200 shrink-0">
-                            <img
+                            <Image
                                 src={item.image}
                                 alt={item.name}
                                 className="w-full h-full object-cover"

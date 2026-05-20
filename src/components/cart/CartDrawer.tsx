@@ -62,7 +62,7 @@ export default function CartDrawer({ open, onClose }: Props) {
 
                 {items.length > 0 && !session && (
                     <p className="text-sm text-center text-gray-400 px-4 pb-2">
-                        You'll need to{" "}
+                        You will need to{" "}
                         <Link
                             href="/account/login?callbackUrl=/checkout"
                             className="underline text-white"

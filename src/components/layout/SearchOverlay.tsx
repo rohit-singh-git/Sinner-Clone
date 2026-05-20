@@ -14,11 +14,6 @@ interface Product {
     images: string[];
 }
 
-interface Props {
-    open: boolean;
-    onClose: () => void;
-}
-
 // const trending = ["Tees", "Sweats", "Shorts", "Headwear"];
 
 export default function SearchOverlay({
@@ -121,7 +116,7 @@ export default function SearchOverlay({
 
                         {!loading && query && results.length === 0 && (
                             <p className="text-xs text-gray-400 tracking-widest uppercase">
-                                No products found for "{query}"
+                                No products found for {query}
                             </p>
                         )}
 

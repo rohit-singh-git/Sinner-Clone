@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
     const collection = searchParams.get("collection");
     const search = searchParams.get("search");
 
-    let query: any = {};
+    const query: any = {};
     if (collection) query.collection = collection;
     if (search) query.name = { $regex: search, $options: "i" };
 

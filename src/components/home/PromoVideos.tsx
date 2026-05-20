@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import type { EmblaCarouselType } from "embla-carousel";
 
 const promos = [
     {
@@ -46,9 +48,9 @@ export default function PromoSlider() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     // Track previous index to properly pause the outgoing video
     const prevIndexRef = useRef(0);
-    const videoRefs = useRef([]);
+    const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-    const syncVideos = useCallback((emblaApi) => {
+    const syncVideos = useCallback((emblaApi: EmblaCarouselType) => {
         const activeIndex = emblaApi.selectedScrollSnap();
         const prevIndex = prevIndexRef.current;
 
@@ -88,7 +90,7 @@ export default function PromoSlider() {
 
     return (
         <section className="bg-black py-12 relative flex flex-col items-center justify-center min-h-165 select-none gap-6">
-            <div className="overflow-hidden w-full" ref={emblaRef}>
+            <div className="overflow-hidden w-screen" ref={emblaRef}>
                 <div className="flex backface-hidden">
                     {promos.map((item, i) => {
                         const isActive = i === selectedIndex;
@@ -111,18 +113,20 @@ export default function PromoSlider() {
                                     `}
                                 >
                                     {item.type === "image" ? (
-                                        <img
+                                        <Image
                                             src={item.src}
                                             alt=""
+                                            width={100}
+                                            height={100}
                                             className="w-full h-full object-cover pointer-events-none"
                                             loading="lazy"
                                         />
                                     ) : (
                                         <div className="relative w-full h-full">
                                             <video
-                                                ref={(el) =>
-                                                    (videoRefs.current[i] = el)
-                                                }
+                                                ref={(el) => {
+                                                    videoRefs.current[i] = el;
+                                                }}
                                                 src={item.src}
                                                 muted
                                                 autoPlay
@@ -193,7 +197,12 @@ export default function PromoSlider() {
 }
 
 /** Minimal mute/unmute toggle rendered over the active video card */
-function MuteToggle({ videoRef }) {
+
+type MuteToggleProps = {
+    videoRef: React.RefObject<HTMLVideoElement | null>;
+};
+
+function MuteToggle({ videoRef }: MuteToggleProps) {
     const [muted, setMuted] = useState(true);
 
     const toggle = () => {

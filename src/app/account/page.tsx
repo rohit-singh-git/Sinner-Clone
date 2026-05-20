@@ -9,7 +9,7 @@ export default async function AccountPage() {
     if (!session) redirect("/account/login");
 
     await connectDB();
-    const orders = (await Order.find({ "customer.email": session.user.email })
+    const orders = (await Order.find({ "customer.email": session?.user?.email })
         .sort({ createdAt: -1 })
         .lean()) as any[];
 

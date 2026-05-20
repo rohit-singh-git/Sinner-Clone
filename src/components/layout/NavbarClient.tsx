@@ -2,7 +2,7 @@
 import { useCartStore } from "@/store/CartStore";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Search, ShoppingBag, User, X } from "lucide-react";
+import { Search, ShoppingBag, User} from "lucide-react";
 import CartDrawer from "@/components/cart/CartDrawer";
 import SearchOverlay from "@/components/layout/SearchOverlay";
 import { Squash as Hamburger } from "hamburger-react";

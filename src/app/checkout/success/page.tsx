@@ -10,7 +10,7 @@ export default function SuccessPage() {
                 Thank You
             </h1>
             <p className="text-sm text-gray-500 mb-8">
-                Your order has been placed. You'll receive a confirmation email
+                Your order has been placed. You&apos;ll receive a confirmation email
                 shortly.
             </p>
             <Link

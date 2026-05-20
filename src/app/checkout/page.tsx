@@ -14,7 +14,10 @@ export default async function CheckoutPage() {
                 Checkout
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <CheckoutForm userEmail={session.user?.email!} userName={session.user?.name!} />
+                <CheckoutForm
+                    userEmail={session?.user?.email ?? ""}
+                    userName={session?.user?.name ?? ""}
+                />
                 <OrderSummaryWrapper />
             </div>
         </div>

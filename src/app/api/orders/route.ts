@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import { Order } from "@/models/Order";
 import { auth } from "@/lib/auth";
@@ -12,7 +12,7 @@ export async function GET() {
     await connectDB();
 
     const isAdmin = (session.user as { role?: string }).role === "admin";
-    const query = isAdmin ? {} : { "customer.email": session.user.email };
+    const query = isAdmin ? {} : { "customer.email": session?.user?.email };
 
     const orders = await Order.find(query).sort({ createdAt: -1 }).lean();
     return NextResponse.json({ orders });

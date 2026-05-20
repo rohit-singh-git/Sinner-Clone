@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function CategoryStrip() {
     const items = Array(6).fill(
         "https://www.officialsinner.com/cdn/shop/files/cat-icon.png?crop=center&height=4119&v=1755773412&width=3800",
@@ -11,9 +13,11 @@ export default function CategoryStrip() {
                         key={i}
                         className="flex items-center gap-6 px-12 shrink-0"
                     >
-                        <img
+                        <Image
                             src={src}
                             alt=""
+                            width={24}
+                            height={24}
                             className="w-6 h-6 object-contain"
                         />
                         <p className="text-white text-4xl font-bold whitespace-nowrap ml-20">
