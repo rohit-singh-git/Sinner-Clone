@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useCurrency } from "@/context/CurrencyContext";
 
 export default function Footer() {
     const payments = [
@@ -13,6 +14,8 @@ export default function Footer() {
         "Union Pay",
         "Visa",
     ];
+
+    const { currency, setCurrency } = useCurrency();
 
     return (
         <footer className="bg-black text-white border-t border-zinc-800">
@@ -72,18 +75,16 @@ export default function Footer() {
 
                         <select
                             name="country"
+                            value={currency}
+                            onChange={(e) => setCurrency(e.target.value)}
                             id="count"
                             className="mb-5 bg-black text-white border rounded-md p-2"
                         >
-                            <option value="Australia" defaultChecked>
-                                Australia
-                            </option>
-                            <option value="Austria">Austria</option>
-                            <option value="Germany">Germany</option>
-                            <option value="India">India</option>
-                            <option value="New Zealand">New Zealand</option>
-                            <option value="France">France</option>
-                            <option value="Italy">Italy</option>
+                            <option value="INR">India (₹)</option>
+                            <option value="USD">USA ($)</option>
+                            <option value="GBP">UK (£)</option>
+                            <option value="EUR">Europe (€)</option>
+                            <option value="AED">UAE (AED)</option>
                         </select>
 
                         <h3 className="uppercase text-xs tracking-[0.25em] mb-4 text-zinc-300">

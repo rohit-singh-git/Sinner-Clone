@@ -34,7 +34,7 @@ export default function OrderSummary({
                             <p className="text-xs text-gray-400">{item.size}</p>
                         </div>
                         <p className="text-xs">
-                            ${(item.price * item.quantity).toFixed(2)}
+                            ₹{(item.price * item.quantity).toFixed(2)}
                         </p>
                     </div>
                 ))}
@@ -43,16 +43,16 @@ export default function OrderSummary({
             <div className="border-t pt-4 space-y-2">
                 <div className="flex justify-between text-lg">
                     <span className="text-gray-400">Subtotal</span>
-                    <span>${total.toFixed(2)} AUD</span>
+                    <span>₹{total.toFixed(2)} INR</span>
                 </div>
                 <div className="flex justify-between text-lg">
                     <span className="text-gray-400">Shipping</span>
-                    <span>{total >= 150 ? "Free" : "$10.00 AUD"}</span>
+                    <span>{total >= 150 ? "Free" : "₹10.00 INR"}</span>
                 </div>
                 <div className="flex justify-between text-lg font-semibold border-t pt-2">
                     <span>Total</span>
                     <span>
-                        ${(total >= 150 ? total : total + 10).toFixed(2)} AUD
+                        ₹{(total >= 150 ? total : total + 10).toFixed(2)} INR
                     </span>
                 </div>
             </div>

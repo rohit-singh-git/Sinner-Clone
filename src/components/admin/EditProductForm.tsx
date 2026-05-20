@@ -60,7 +60,7 @@ export default function EditProductForm({ product }: Props) {
                 className="border px-4 py-3 text-sm outline-none"
             />
             <input
-                placeholder="Price (AUD)"
+                placeholder="Price (INR)"
                 type="number"
                 value={form.price}
                 onChange={(e) => setForm({ ...form, price: e.target.value })}

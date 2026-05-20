@@ -30,7 +30,10 @@ export default function CartItemRow({ item }: { item: CartItem }) {
                             {item.size}
                         </p>
                     </div>
-                    <button onClick={() => removeItem(item.id, item.size)} className="btn-press hover:text-red-500 transition-colors">
+                    <button
+                        onClick={() => removeItem(item.id, item.size)}
+                        className="btn-press hover:text-red-500 transition-colors"
+                    >
                         <X size={14} />
                     </button>
                 </div>
@@ -67,7 +70,7 @@ export default function CartItemRow({ item }: { item: CartItem }) {
 
                     {/* Price */}
                     <p className="text-xs font-medium">
-                        ${(item.price * item.quantity).toFixed(2)} AUD
+                        ₹{(item.price * item.quantity).toFixed(2)} INR
                     </p>
                 </div>
             </div>

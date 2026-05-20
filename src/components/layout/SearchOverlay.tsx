@@ -151,8 +151,8 @@ export default function SearchOverlay({
                                                     {product.name}
                                                 </p>
                                                 <p className="text-xs text-gray-400 mt-0.5">
-                                                    ${product.price.toFixed(2)}{" "}
-                                                    AUD
+                                                    ₹{product.price.toFixed(2)}{" "}
+                                                    INR
                                                 </p>
                                             </div>
                                         </Link>

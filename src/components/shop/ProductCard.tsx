@@ -70,10 +70,10 @@ export default function ProductCard({ product }: { product: Product }) {
                 </p>
 
                 <div className="flex items-center gap-2 text-xl font-bold">
-                    <span>${product.price.toFixed(2)} AUD</span>
+                    <span>₹{product.price.toFixed(2)} INR</span>
                     {product.originalPrice && (
                         <span className="line-through text-gray-400">
-                            ${product.originalPrice.toFixed(2)} AUD
+                            ₹{product.originalPrice.toFixed(2)} INR
                         </span>
                     )}
                 </div>

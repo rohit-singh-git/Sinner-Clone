@@ -40,7 +40,7 @@ export default async function AdminDashboard() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                 <AdminStatsCard
                     label="Total Revenue"
-                    value={`$${totalRevenue.toFixed(2)}`}
+                    value={`₹${totalRevenue.toFixed(2)}`}
                     sub="INR"
                 />
                 <AdminStatsCard label="Total Orders" value={totalOrders} />

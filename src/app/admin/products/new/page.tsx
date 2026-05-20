@@ -63,7 +63,7 @@ export default function NewProductPage() {
                     className="border border-white px-4 py-3 text-sm outline-none"
                 />
                 <input
-                    placeholder="Price (AUD)"
+                    placeholder="Price (INR)"
                     type="number"
                     value={form.price}
                     onChange={(e) =>

@@ -61,7 +61,7 @@ export default function AdminOrderTable({ orders }: { orders: Order[] }) {
                     >
                         <span>{order.id.slice(-10)}</span>
 
-                        <span>${order.total.toFixed(2)} INR</span>
+                        <span>₹{order.total.toFixed(2)} INR</span>
                         <span>
                             <span
                                 className={`px-2 py-1 text-[10px] tracking-widest uppercase rounded ${statusColors[order.status]}`}
@@ -125,7 +125,7 @@ export default function AdminOrderTable({ orders }: { orders: Order[] }) {
                                                 </span>
                                             </span>
                                             <span className="text-gray-500">
-                                                $
+                                                ₹
                                                 {(
                                                     item.price * item.quantity
                                                 ).toFixed(2)}
@@ -135,7 +135,7 @@ export default function AdminOrderTable({ orders }: { orders: Order[] }) {
                                 </div>
                                 <div className="border-t border-gray-200 mt-3 pt-3 flex justify-between font-semibold">
                                     <span>Total</span>
-                                    <span>${order.total.toFixed(2)}</span>
+                                    <span>₹{order.total.toFixed(2)}</span>
                                 </div>
                             </div>
                         </div>

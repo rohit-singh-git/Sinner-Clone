@@ -79,7 +79,7 @@ export default function CartDrawer({ open, onClose }: Props) {
                     <div className="border-t p-4 space-y-4">
                         <div className="flex justify-between text-sm font-semibold tracking-widest uppercase">
                             <span>Subtotal</span>
-                            <span>${total().toFixed(2)} AUD</span>
+                            <span>₹{total().toFixed(2)} INR</span>
                         </div>
                         <p className="text-xs text-gray-400 text-center">
                             Taxes and shipping calculated at checkout

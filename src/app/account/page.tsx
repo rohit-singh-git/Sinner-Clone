@@ -102,7 +102,7 @@ export default async function AccountPage() {
                                                     </div>
 
                                                     <p className="text-sm font-medium">
-                                                        ${item.price.toFixed(2)}
+                                                        ₹{item.price.toFixed(2)}
                                                     </p>
                                                 </div>
                                             ),
@@ -125,7 +125,7 @@ export default async function AccountPage() {
                                                 Total
                                             </p>
                                             <p className="text-lg font-semibold">
-                                                ${order.total.toFixed(2)} AUD
+                                                ₹{order.total.toFixed(2)} INR
                                             </p>
                                         </div>
                                     </div>

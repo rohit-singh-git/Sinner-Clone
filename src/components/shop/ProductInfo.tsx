@@ -2,6 +2,7 @@
 import { useState } from "react";
 import SizeSelector from "./SizeSelector";
 import AddToCartButton from "./AddToCartButton";
+import { useCurrency } from "@/context/CurrencyContext";
 
 interface Props {
     id: string;
@@ -30,6 +31,8 @@ export default function ProductInfo({
 }: Props) {
     const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
+    const {currency, rates} = useCurrency();
+
     return (
         <div className="flex flex-col gap-6 md:mt-15 lg:mt-25">
             <div>
@@ -42,10 +45,10 @@ export default function ProductInfo({
                     {name}
                 </h1>
                 <div className="flex items-center gap-3 text-lg font-semibold">
-                    <span>${price.toFixed(2)} AUD</span>
+                    <span>₹{price.toFixed(2)} INR</span>
                     {originalPrice && (
                         <span className="line-through text-gray-400">
-                            ${originalPrice.toFixed(2)} AUD
+                            ₹{originalPrice.toFixed(2)} INR
                         </span>
                     )}
                 </div>
@@ -73,7 +76,7 @@ export default function ProductInfo({
             />
 
             <p className="text-xs text-gray-400 text-center tracking-wide">
-                Free shipping on orders over $150 AUD
+                Free shipping on orders over ₹150 INR
             </p>
         </div>
     );

@@ -84,7 +84,7 @@ export default function AdminProductTable() {
                             {product.name}
                         </span>
                     </div>
-                    <span>${product.price.toFixed(2)}</span>
+                    <span>₹{product.price.toFixed(2)}</span>
                     <span>
                         <span
                             className={`px-2 py-1 text-[10px] tracking-widest uppercase rounded
