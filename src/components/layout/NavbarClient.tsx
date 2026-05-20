@@ -91,7 +91,7 @@ export default function NavbarClient() {
                             </span>
                         </Link>
                         <Link
-                            href="/pages/contact"
+                            href="/contact"
                             className="hover:text-gray-300 transition-colors"
                         >
                             Help
@@ -160,7 +160,7 @@ export default function NavbarClient() {
                             </span>
                         </Link>
                         <Link
-                            href="/pages/contact"
+                            href="/contact"
                             onClick={() => setMobileMenuOpen(false)}
                             className="text-white text-lg tracking-widest uppercase font-semibold border-b border-white/10 pb-6"
                         >
