@@ -144,7 +144,7 @@ export default async function AccountPage() {
             >
                 <button
                     type="submit"
-                    className="text-xs tracking-widest uppercase underline underline-offset-4"
+                    className="btn-press text-xs tracking-widest uppercase underline underline-offset-4 hover:text-red-500 cursor-pointer"
                 >
                     Sign Out
                 </button>
