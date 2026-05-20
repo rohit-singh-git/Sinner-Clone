@@ -98,7 +98,11 @@ export default function PromoSlider() {
                         return (
                             <div
                                 key={i}
-                                className="flex-[0_0_24%] min-w-0 px-2 flex items-center justify-center h-160"
+                                className="
+                                flex-[0_0_80%] sm:flex-[0_0_55%] md:flex-[0_0_38%] lg:flex-[0_0_24%]
+                                min-w-0 px-1 sm:px-2
+                                flex items-center justify-center
+                                h-96 sm:h-120 md:h-140 lg:h-160"
                             >
                                 <div
                                     className={`
@@ -107,8 +111,8 @@ export default function PromoSlider() {
                                         will-change-transform
                                         ${
                                             isActive
-                                                ? "scale-100 h-155 opacity-100 shadow-2xl shadow-white/10"
-                                                : "scale-[0.88] h-130 opacity-30"
+                                                ? "scale-100 h-90 sm:h-110 md:h-130 lg:h-155 opacity-100 shadow-2xl shadow-white/10"
+                                                : "scale-[0.88] h-75 sm:h-95 md:h-115 lg:h-130 opacity-30"
                                         }
                                     `}
                                 >

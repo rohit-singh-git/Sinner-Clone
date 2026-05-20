@@ -6,6 +6,7 @@ import InstagramSection from "@/components/home/InstagramSection";
 // import { stapleProducts, accessoryProducts } from "@/lib/mock-products";
 import { connectDB } from "@/lib/db";
 import { Product } from "@/models/Product";
+import InstaFeed from "@/components/home/InstaFeed";
 
 export default async function HomePage() {
     await connectDB();
@@ -39,6 +40,7 @@ export default async function HomePage() {
             />
             <CategoryStrip />
             <PromoVideos />
+            <InstaFeed />
             <InstagramSection />
         </>
     );
