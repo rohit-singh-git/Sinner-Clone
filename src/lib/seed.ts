@@ -49,6 +49,7 @@ const products = [
         sizes: ["XS", "S", "M", "L", "XL", "XXL"],
         images: [
             "https://www.officialsinner.com/cdn/shop/files/combined_square_both_products_1.png?crop=center&height=2048&v=1775891498&width=2048",
+            "https://www.officialsinner.com/cdn/shop/files/combined_square_both_products_1.png?crop=center&height=2048&v=1775891498&width=2048",
         ],
     },
     {
