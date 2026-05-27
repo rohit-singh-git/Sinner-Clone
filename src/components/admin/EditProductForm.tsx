@@ -9,6 +9,8 @@ interface Props {
         name: string;
         slug: string;
         price: number;
+        originalPrice: number | null;
+        badge: string | null;
         description: string;
         sizes: string[];
         collection: string;
@@ -25,6 +27,7 @@ export default function EditProductForm({ product }: Props) {
         description: product.description,
         sizes: product.sizes.join(", "),
         collection: product.collection,
+
         soldOut: product.soldOut,
         slug: product.slug,
     });
