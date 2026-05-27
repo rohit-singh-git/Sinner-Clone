@@ -9,12 +9,12 @@ export default function InstagramSection() {
             </h2>
 
             <a
-                href="https://www.instagram.com/sinnermngt/"
+                href="https://www.instagram.com/hardystunts/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm tracking-widest text-red-800 underline underline-offset-4"
             >
-                @sinnermngt
+                @hardystunts
             </a>
         </section>
     );

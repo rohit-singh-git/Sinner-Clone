@@ -90,7 +90,7 @@ export default function PromoSlider() {
 
     return (
         <section className="bg-black py-12 relative flex flex-col items-center justify-center min-h-165 select-none gap-6">
-            <div className="overflow-hidden w-screen" ref={emblaRef}>
+            <div className="overflow-hidden w-full" ref={emblaRef}>
                 <div className="flex backface-hidden">
                     {promos.map((item, i) => {
                         const isActive = i === selectedIndex;

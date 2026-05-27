@@ -2,7 +2,6 @@
 import { useState } from "react";
 import SizeSelector from "./SizeSelector";
 import AddToCartButton from "./AddToCartButton";
-import { useCurrency } from "@/context/CurrencyContext";
 
 interface Props {
     id: string;
@@ -31,7 +30,6 @@ export default function ProductInfo({
 }: Props) {
     const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
-    const {currency, rates} = useCurrency();
 
     return (
         <div className="flex flex-col gap-6 md:mt-15 lg:mt-25">

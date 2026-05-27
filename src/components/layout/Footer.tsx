@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useCurrency } from "@/context/CurrencyContext";
 
 export default function Footer() {
     const payments = [
@@ -14,8 +13,6 @@ export default function Footer() {
         "Union Pay",
         "Visa",
     ];
-
-    const { currency, setCurrency } = useCurrency();
 
     return (
         <footer className="bg-black text-white border-t border-zinc-800">
@@ -33,13 +30,18 @@ export default function Footer() {
                             sinner ]
                         </p>
 
-                        <div className="space-y-2 text-sm text-zinc-300">
+                        <div className="space-y-2 flex gap-3">
                             <a
-                                href="https://www.instagram.com/sinnermngt/"
+                                href="https://www.instagram.com/hardystunts/"
                                 target="_blank"
-                                className="block hover:text-white transition"
+                                className="block hover:text-white transition text-zinc-300"
                             >
-                                Instagram
+                                <img
+                                    src="./insta-logo.png"
+                                    alt="Instagram logo"
+                                    width={24}
+                                    className="mt-0.5"
+                                />
                             </a>
                         </div>
                     </div>
@@ -51,42 +53,24 @@ export default function Footer() {
                         </h3>
 
                         <div className="space-y-3 text-sm text-zinc-400">
-                            <Link href="#">Contact</Link>
+                            <Link href="/contact">Contact</Link>
                             <br />
-                            <Link href="#">Shipping Policy</Link>
+                            <Link href="/policies/shipping">Shipping Policy</Link>
                             <br />
-                            <Link href="#">Refund Policy</Link>
+                            <Link href="/policies/refund">Refund Policy</Link>
                             <br />
-                            <Link href="#">Privacy Policy</Link>
+                            <Link href="/policies/privacy">Privacy Policy</Link>
                             <br />
-                            <Link href="#">Terms of Service</Link>
+                            <Link href="/policies/terms">Terms of Service</Link>
                             <br />
-                            <Link href="#">
+                            <Link href="/policies/gift-card">
                                 Gift Card & Store Credit Policy
                             </Link>
                         </div>
                     </div>
 
-                    {/* Region + Payments */}
+                    {/* Payments */}
                     <div>
-                        <h3 className="uppercase text-xs tracking-[0.25em] mb-4 text-zinc-300">
-                            Country / Region
-                        </h3>
-
-                        <select
-                            name="country"
-                            value={currency}
-                            onChange={(e) => setCurrency(e.target.value)}
-                            id="count"
-                            className="mb-5 bg-black text-white border rounded-md p-2"
-                        >
-                            <option value="INR">India (₹)</option>
-                            <option value="USD">USA ($)</option>
-                            <option value="GBP">UK (£)</option>
-                            <option value="EUR">Europe (€)</option>
-                            <option value="AED">UAE (AED)</option>
-                        </select>
-
                         <h3 className="uppercase text-xs tracking-[0.25em] mb-4 text-zinc-300">
                             Payment Methods
                         </h3>
@@ -109,11 +93,11 @@ export default function Footer() {
                     <p>© 2026, Official Sinner</p>
 
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link href="#">Privacy policy</Link>
-                        <Link href="#">Refund policy</Link>
-                        <Link href="#">Terms of service</Link>
-                        <Link href="#">Shipping policy</Link>
-                        <Link href="#">Contact information</Link>
+                        <Link href="/policies/privacy">Privacy policy</Link>
+                        <Link href="/policies/refund">Refund policy</Link>
+                        <Link href="/policies/terms">Terms of service</Link>
+                        <Link href="/policies/shipping">Shipping policy</Link>
+                        <Link href="/contact">Contact information</Link>
                     </div>
 
                     <button

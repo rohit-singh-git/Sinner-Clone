@@ -26,6 +26,7 @@ export default function EditProductForm({ product }: Props) {
         sizes: product.sizes.join(", "),
         collection: product.collection,
         soldOut: product.soldOut,
+        slug: product.slug,
     });
     const [images, setImages] = useState<string[]>(product.images);
     const [loading, setLoading] = useState(false);
@@ -56,8 +57,24 @@ export default function EditProductForm({ product }: Props) {
             <input
                 placeholder="Product Name"
                 value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                // when name changes, auto-fill slug
+                onChange={(e) => {
+                    const name = e.target.value;
+                    const slug = name
+                        .toLowerCase()
+                        .trim()
+                        .replace(/\s+/g, "-")
+                        .replace(/[^a-z0-9-]/g, "");
+                    setForm({ ...form, name, slug });
+                }}
                 className="border px-4 py-3 text-sm outline-none"
+            />
+
+            <input
+                placeholder="Slug (auto-generated)"
+                value={form.slug}
+                readOnly
+                className="border border-white px-4 py-3 text-sm outline-none text-gray-50 cursor-not-allowed"
             />
             <input
                 placeholder="Price (INR)"

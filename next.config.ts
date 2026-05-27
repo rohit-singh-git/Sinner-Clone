@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
             "www.officialsinner.com",
             "cdn.shopify.com",
             "www.instagram.com",
+            "cloudinary.com",
+            "res.cloudinary.com",
         ], // Add other domains as needed
     },
 };

@@ -53,14 +53,23 @@ export default function NewProductPage() {
                 <input
                     placeholder="Product Name"
                     value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    // when name changes, auto-fill slug
+                    onChange={(e) => {
+                        const name = e.target.value;
+                        const slug = name
+                            .toLowerCase()
+                            .trim()
+                            .replace(/\s+/g, "-")
+                            .replace(/[^a-z0-9-]/g, "");
+                        setForm({ ...form, name, slug });
+                    }}
                     className="border border-white px-4 py-3 text-sm outline-none"
                 />
                 <input
-                    placeholder="Slug (e.g. staple-hoodie)"
+                    placeholder="Slug (auto-generated)"
                     value={form.slug}
-                    onChange={(e) => setForm({ ...form, slug: e.target.value })}
-                    className="border border-white px-4 py-3 text-sm outline-none"
+                    readOnly
+                    className="border border-white px-4 py-3 text-sm outline-none text-gray-50 cursor-not-allowed"
                 />
                 <input
                     placeholder="Price (INR)"

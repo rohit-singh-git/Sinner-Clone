@@ -27,8 +27,14 @@ export default async function AdminDashboard() {
         total: o.total,
         status: o.status,
         date: new Date(o.createdAt).toISOString().split("T")[0],
-        items: o.items ?? [],
-        shippingAddress: o.shippingAddress ?? null, // ← add this
+        shippingAddress: o.shippingAddress ?? null,
+        items: o.items.map((item: any) => ({
+            name: item.name,
+            quantity: item.quantity,
+            size: item.size,
+            price: item.price,
+            image: item.image ?? "",
+        })),
     }));
 
     return (

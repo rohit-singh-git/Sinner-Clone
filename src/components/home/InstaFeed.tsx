@@ -35,7 +35,11 @@ function InstaFeed() {
 
                     {/* instagram icon */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 transition duration-300 group-hover:opacity-100">
-                        <FaInstagram size={45} />
+                        <img
+                            src="./insta-logo.png"
+                            alt="Instagram logo"
+                            width={40}
+                        />
                     </div>
                 </a>
             ))}

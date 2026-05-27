@@ -15,15 +15,22 @@ export default async function EditProductPage({
 
     return (
         <div className="max-w-xl">
-            <h1 className="text-md tracking-widest uppercase font-semibold mb-8">
+            <h1 className="text-xs tracking-widest uppercase font-semibold mb-8">
                 Edit Product
             </h1>
             <EditProductForm
                 product={{
-                    ...product,
                     id: product._id.toString(),
+                    name: product.name,
+                    slug: product.slug,
+                    description: product.description ?? "",
+                    price: product.price,
                     originalPrice: product.originalPrice ?? null,
                     badge: product.badge ?? null,
+                    sizes: product.sizes ?? [],
+                    images: product.images ?? [],
+                    collection: product.collection ?? "",
+                    soldOut: product.soldOut ?? false,
                 }}
             />
         </div>

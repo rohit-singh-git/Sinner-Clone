@@ -20,7 +20,7 @@ export default function CategoryStrip() {
                             height={24}
                             className="w-6 h-6 object-contain"
                         />
-                        <p className="text-white text-4xl font-bold whitespace-nowrap ml-20">
+                        <p className="text-white text-4xl font-bold whitespace-nowrap ml-21">
                             SHOP NOW
                         </p>
                     </div>
