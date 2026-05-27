@@ -7,7 +7,7 @@ export default function ContactPage() {
                     Contact Us
                 </h1>
                 <p className="mt-4 text-gray-300 max-w-xl mx-auto text-lg">
-                    We'd love to hear from you. Questions, collaborations, or
+                    We&apos;d love to hear from you. Questions, collaborations, or
                     support — reach out anytime.
                 </p>
             </section>
